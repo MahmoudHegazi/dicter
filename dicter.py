@@ -14,6 +14,8 @@ def syntax_cheacker(dicter_str):
         if c == ':' and check_on == False:
             check_on = True
             check_i += 1
+        if check_on == False:
+            continue
             
         if check_on == True and (c == " "):
             continue
@@ -25,7 +27,7 @@ def syntax_cheacker(dicter_str):
                 check_i = 0
                 print("valid integer")
             else:
-                if ord(c) == ord("'") or ord(c)  == ord('"'):
+                if (ord(c) == ord("'") or ord(c)  == ord('"')):
                     if check_i == 1:
                         check_i = 2
                     else:
@@ -33,12 +35,6 @@ def syntax_cheacker(dicter_str):
                         check_i = 0
                         print("valid str")
 
-       
-    for i in sectlist:
-        if ":" not in i:
-            print("syntax error: invalid dicter format")
-        if len(i.split(":")) != 2:
-            print("syntax error: invalid dicter, dicter must contains key:value pairs")
     print(sectlist)
 syntax_cheacker(ok)
 
